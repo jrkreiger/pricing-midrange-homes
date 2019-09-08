@@ -19,7 +19,7 @@ If you download the notebook to view locally, note that I formatted it using Jup
 ### Related content
 You can read my blog post about the project at this link: http://jrkreiger.net/uncategorized/cleaning-house-data/.
 
-View a video of my non-technical presentation here: https://www.youtube.com/watch?v=FFKf7zfdFD0&feature=youtu.be.
+View a video of my non-technical presentation here: https://youtu.be/yvaGRdNtPNI.
 
 ### Authorship
-Flatiron School provided me the dataset, the data dictionary, a Jupyter Notebook containing only a rubric for recording my identifying information, and the code I used for stepwise selection. I wrote the rest of the code in the Jupyter Notebook, the text of this README, my blog post linked above, and the content of my non-technical presentation (with the exception of some images whose creators I credit in the slides). 
+Flatiron School provided me the dataset, the data dictionary, a Jupyter Notebook containing only a rubric for recording my identifying information, and the code I used for stepwise selection. I wrote the rest of the code in the Jupyter Notebook, the text of this README, my blog post linked above, and the content of my non-technical presentation (with the exception of some images whose creators I credit in the slides).
