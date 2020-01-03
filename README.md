@@ -1,5 +1,5 @@
 
-# Introduction: Pricing Midrange Homes in King County, WA
+# Pricing Midrange Homes in King County, WA
 
 In recent years King County, WA, has seen cost of living climb well above state and national averages, and the high cost of housing is a major factor in this increase. A [news article published by the University of Washington](https://www.washington.edu/news/2017/10/11/in-seattle-cost-of-meeting-basic-needs-up-30000-in-a-decade/) in 2017 reported that the cost of basic living essentials for a family of four in Seattle had increased by $30,000 (62\%) over the previous decade, with housing and childcare eating up half of a family's budget.
 
@@ -986,7 +986,7 @@ hist_it(data_for_hist)
 ```
 
 
-![](output_27_0.png)
+![](./images/output_27_0.png)
 
 
 Let's also take a look at scatter plots for each numeric variable. Coincidentally, the scatter matrix below will let us do an initial check for linear relationships between the independent variables and the target of our analysis, `price`.
@@ -998,7 +998,7 @@ pd.plotting.scatter_matrix(data.drop(['id'], axis=1), figsize=[16,14]);
 ```
 
 
-![](output_29_0.png)
+![](./images/output_29_0.png)
 
 
 Based on the plots, value counts, and summary statistics, I think that `floors`, `waterfront`, `view`, `condition`,  and `grade` may all be candidates for one-hot encoding in the final dataset. There is also `zipcode` to consider; although there are many unique values in that column, a home's zipcode is more like a category it belongs to than a quantitative measure of some kind. 
@@ -1496,7 +1496,7 @@ plt.show();
 ```
 
 
-![](output_34_0.png)
+![](./images/output_34_0.png)
 
 
 The only pair of features with a correlation coefficient of 0.8 or above is `sqft_living` and `sqft_above`. As stated earlier, `sqft_living` is the sum of `sqft_above` and `sqft_basement`, so `sqft_above` will be dropped from the dataset anyway, avoiding any potential effects caused by multicollinearity.
@@ -2058,7 +2058,7 @@ plt.show();
 ```
 
 
-![](output_55_0.png)
+![](./images/output_55_0.png)
 
 
 ...we can see that mode of values in this column is 0 by a long shot. We can see from the summary statistics table (above) that 0 is also the minimum value, the 25th percentile, the median, and the 75% percentile. For these reasons, I will reassign all missing values to 0, since this will not change the overall distribution of the data.
@@ -2117,7 +2117,7 @@ plt.show();
 ```
 
 
-![](output_60_0.png)
+![](./images/output_60_0.png)
 
 
 Since 0 is the mode, I will replace the missing values with 0:
@@ -2266,7 +2266,7 @@ hist_it(midrange_homes)
 ```
 
 
-![](output_73_0.png)
+![](./images/output_73_0.png)
 
 
 Note that selecting the homes with lower prices and 2-5 bedrooms has also caused the ranges of some other variables to shrink. `grade`, for instance, now only goes up to 10, `sqft_living` to about 5,000, and `bathrooms` up to 5. 
@@ -2282,71 +2282,71 @@ for column in midrange_homes.drop('price', axis=1):
 ```
 
 
-![](output_75_0.png)
+![](./images/output_75_0.png)
 
 
 
-![](output_75_1.png)
+![](./images/output_75_1.png)
 
 
 
-![](output_75_2.png)
+![](./images/output_75_2.png)
 
 
 
-![](output_75_3.png)
+![](./images/output_75_3.png)
 
 
 
-![](output_75_4.png)
+![](./images/output_75_4.png)
 
 
 
-![](output_75_5.png)
+![](./images/output_75_5.png)
 
 
 
-![](output_75_6.png)
+![](./images/output_75_6.png)
 
 
 
-![](output_75_7.png)
+![](./images/output_75_7.png)
 
 
 
-![](output_75_8.png)
+![](./images/output_75_8.png)
 
 
 
-![](output_75_9.png)
+![](./images/output_75_9.png)
 
 
 
-![](output_75_10.png)
+![](./images/output_75_10.png)
 
 
 
-![](output_75_11.png)
+![](./images/output_75_11.png)
 
 
 
-![](output_75_12.png)
+![](./images/output_75_12.png)
 
 
 
-![](output_75_13.png)
+![](./images/output_75_13.png)
 
 
 
-![](output_75_14.png)
+![](./images/output_75_14.png)
 
 
 
-![](output_75_15.png)
+![](./images/output_75_15.png)
 
 
 
-![](output_75_16.png)
+![](./images/output_75_16.png)
 
 
 Most features appear to have a more or less linear relationship with price. The distribution of points in `zipcode` makes me wonder if there are actually two subsets in this data: homes in the Seattle area (with zipcodes of 98100 and up), and homes elsewhere in the county. Depending on the results of my first attempt at modeling, I may decide to reexamine the effect that location may be having on the model.
@@ -2798,7 +2798,7 @@ plt.show();
 ```
 
 
-![](output_78_0.png)
+![](./images/output_78_0.png)
 
 
 Good news: there appear to be no correlations with coefficients higher than my chosen threshold of 0.8. 
@@ -2829,7 +2829,7 @@ plt.show();
 ```
 
 
-![](output_84_0.png)
+![](./images/output_84_0.png)
 
 
 
@@ -2872,7 +2872,7 @@ plt.show();
 ```
 
 
-![](output_89_0.png)
+![](./images/output_89_0.png)
 
 
 Although houses sell at a wide range of prices every month, median prices appear to be higher in April through July than in November through February.
@@ -2912,7 +2912,7 @@ plt.show();
 ```
 
 
-![](output_95_0.png)
+![](./images/output_95_0.png)
 
 
 It looks like there could be substantial differences in price based on the grade of a house. For instance, only the outliers of grade-5 houses fall within the price range of grade-11 houses. 
@@ -2994,7 +2994,7 @@ locate_it(midrange_homes, 'lat', 'long', 'price')
 ```
 
 
-![](output_104_0.png)
+![](./images/output_104_0.png)
 
 
 This scatterplot confirms that the most expensive midrange homes (blue dots) can be found in Seattle, around Lake Washington, and in some other waterfront locations. Less expensive homes (red dots) are concentrated in the southwest part of the county.
@@ -3006,7 +3006,7 @@ locate_it(midrange_homes, 'lat', 'long', 'sqft_living')
 ```
 
 
-![](output_106_0.png)
+![](./images/output_106_0.png)
 
 
 Midrange homes tend to be smaller, which is why there are so few blue dots on this plot. It's hard to understand the range of home sizes represented here, so I'll plot it again with some adjustments to the color scale.
@@ -3029,7 +3029,7 @@ plt.show();
 ```
 
 
-![](output_108_0.png)
+![](./images/output_108_0.png)
 
 
 That's a little easier to understand. Midrange homes over 2,000 square feet can be found across much of western King County _except_ in Seattle proper, where they are less common.
@@ -3043,7 +3043,7 @@ locate_it(midrange_homes, 'lat', 'long', 'grade')
 ```
 
 
-![](output_110_0.png)
+![](./images/output_110_0.png)
 
 
 This plot shows that the highest quality midrange homes by grade can be found to the east of Lake Washington, while there seem to be more low-quality homes in the central and southwestern parts of the county. Overall, midrange homes tend to have grades in the middle of the range of possible values, from 6 to 10. 
@@ -3056,7 +3056,7 @@ locate_it(midrange_homes, 'lat', 'long', 'condition')
 ```
 
 
-![](output_112_0.png)
+![](./images/output_112_0.png)
 
 
 This plot contains some good news for middle-income home buyers: homes in good condition (blue dots) can be found all over King County, and midrange homes are almost all of middling condition or better. 
@@ -3907,7 +3907,7 @@ for column in columns_for_qq:
 ```
 
 
-![](output_150_0.png)
+![](./images/output_150_0.png)
 
 
 _(See the project notebook in this repository for a full printout of the Q-Q plots.)_
