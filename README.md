@@ -4064,7 +4064,7 @@ There are many factors influencing the price of a home, not all of which are wit
 
 ## Project repository
 
-This repository (github.com/jrkreiger/fs-project-1)[https://github.com/jrkreiger/fs-project-1] contains files from a project assigned to me as part of Flatiron School's Online Data Science Bootcamp. The purpose of the project was to demonstrate skills in data cleaning and multiple linear regression modeling.
+This repository (https://github.com/jrkreiger/pricing-midrange-homes) contains files from a project assigned to me as part of Flatiron School's Online Data Science Bootcamp. The purpose of the project was to demonstrate skills in data cleaning and multiple linear regression modeling.
 
 Here's what you'll find inside:
 
